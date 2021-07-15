@@ -1,0 +1,54 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Century-Gothic;
+    font-weight: 400;
+    src: local("Century-Gothic"),
+      url(/fonts/911Fonts.com_CenturyGothicBold__-_911fonts.com_fonts_pMgo.ttf)
+        format("ttf");
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    .color-13aeb7 {
+      color: #13aeb7;
+    }
+    .login-gradiant-background {
+      background-image: linear-gradient(135deg, #39195e, #13aeb7 50%);
+    }
+    .bg-color-13aeb7 {
+      background-color: #13aeb7;
+    }
+    .font-family-Century-Gothic {
+      font-family: Century-Gothic !important;
+    }
+    .header-logo-hw {
+      height: 74px;
+      width: 174px;
+      position: relative;
+    }
+    .sign-in-page-height {
+      height: calc(100vh - 98px);
+    }
+    .user-profile-page-height {
+      height: calc(100vh - 98px);
+    }
+    .height-feet-content {
+      height: fit-content;
+    }
+    .Toastify__toast--success {
+      background-color: #13aeb7;
+    }
+    .dashboard-page-height {
+      height: 85.1vh;
+    }
+    .sign-in-button-color {
+    }
+  }
+}

@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:1111@localhost:5432/proven-cli-prisma"
+  shadowDatabaseUrl = "postgresql://postgres:1111@localhost:5432/next-auth-proven-cli"
+}
+
+model User {
+  id               Int       @id @default(autoincrement())
+  name             String?
+  email            String?   @unique
+  password         String?
+  isFirstTimeLogin Boolean?  @default(true)
+  emailVerified    DateTime? @map(name: "email_verified")
+  image            String?
+  createdAt        DateTime  @default(now()) @map(name: "created_at")
+  updatedAt        DateTime  @updatedAt @map(name: "updated_at")
+
+  UserProfile UserProfile[]
+  @@map(name: "users")
+}
+
+model UserProfile {
+  id                       Int      @id @default(autoincrement())
+  user                     User     @relation(fields: [user_id], references: [id])
+  user_id                  Int      @unique
+  dba                      String?
+  mid                      String?
+  company                  String?
+  contact                  String?
+  main                     String?
+  mobile                   String?
+  address_line_1           String?
+  address_line_2           String?
+  country                  String?
+  state                    String?
+  business_type             String[]
+  payment_channels         String[]
+  payment_channels_covered String[]
+  mcc                      String?
+  url                      String?
+  ip_address               String?
+  createdAt                DateTime @default(now()) @map(name: "created_at")
+  updatedAt                DateTime @updatedAt @map(name: "updated_at")
+
+  @@map(name: "users_profile")
+}

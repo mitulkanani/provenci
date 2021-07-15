@@ -1,0 +1,35 @@
+{
+  "name": "with-typescript",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc",
+    "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\""
+  },
+  "dependencies": {
+    "@prisma/client": "^2.26.0",
+    "autoprefixer": "^9.8.6",
+    "axios": "^0.21.1",
+    "formik": "^2.2.9",
+    "next": "latest",
+    "next-auth": "^3.27.1",
+    "postcss": "^7.0.36",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-toastify": "^7.0.4",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4",
+    "ts-node": "^10.0.0"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "@types/node": "^12.12.21",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "prisma": "2.26.0",
+    "typescript": "4.0"
+  },
+  "license": "MIT"
+}

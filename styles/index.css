@@ -3,6 +3,7 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+/* @import "~antd/dist/antd.css"; */
 
 @layer base {
   @font-face {
@@ -42,13 +43,123 @@
     .height-feet-content {
       height: fit-content;
     }
+    .horizontal-line{
+      display: block;
+      height: 1px;
+      width:88%;
+      border: 0;
+      border-top: 1px solid #ccc;
+      margin: 1em 0;
+      padding: 0;
+    }
     .Toastify__toast--success {
       background-color: #13aeb7;
     }
     .dashboard-page-height {
-      height: 85.1vh;
+      height: calc(100vh - 99px);
+    }
+    .border-bottom-navbar {
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .sidebar-link-height {
+      height: calc(100vh - 215px);
+    }
+    .sidebar-link-hover:hover{
+      background-color:#f3f3f3;
+      color: rgba(76, 29, 149, 900);
+    }
+    .content-height {
+      height: calc(100vh - 100px);
+      overflow-x: auto;
+    }
+    .active {
+      background-color: #f3f3f3;
+      border-right: 6px solid rgba(76, 29, 149, 900);
+    }
+    .unstyled {
+      -webkit-appearance: none;
+    }
+    .unstyled::-webkit-inner-spin-button,
+    .unstyled::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+    .background-input-color{
+      background-color: #f3f3f3;
+    }
+    .next-button-pci-manager{
+      /* position: fixed; */
+      text-align: end;
+      bottom: 0px;
+      right: 5%; 
     }
     .sign-in-button-color {
+    }
+    .regular-checkbox:checked:after {
+      content: '\2714';
+      font-size: 14px;
+      position: absolute;
+      top: 0px;
+      left: 3px;
+      color: #99a1a7;
+    }
+    /* label {
+      display: inline;
+    } */
+    
+    .regular-checkbox {
+      display: none;
+    }
+    
+    .regular-checkbox + label {
+      background-color: #f3f3f3;
+      border: 1px solid #cacece;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+      padding: 9px;
+      border-radius: 3px;
+      display: inline-block;
+      position: relative;
+    }
+    
+    .regular-checkbox + label:active, .regular-checkbox:checked + label:active {
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .regular-checkbox:checked + label {
+      background-color: #e9ecee;
+      border: 1px solid #adb8c0;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+      color: #99a1a7;
+    }
+    
+    .regular-checkbox:checked + label:after {
+      content: '\2714';
+      font-size: 14px;
+      position: absolute;
+      top: 0px;
+      left: 3px;
+      color: #99a1a7;
+    }
+    
+    
+    .big-checkbox + label {
+      padding: 12px;
+    }
+    
+    .big-checkbox:checked + label:after {
+      font-size: 17px;
+      left: 6px;
+    }
+    .big-checkbox {
+      padding: 12px;
+    }
+    
+    .big-checkbox:checked:after {
+      font-size: 17px;
+      left: 4px;
+    }
+    .background-content-body{
+      background-color: #ebedef;
     }
   }
 }

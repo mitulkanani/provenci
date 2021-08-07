@@ -30,7 +30,7 @@ const Header = ({SideBarClose}:Props) => {
           </svg>
           </button>
         </div>
-        <nav className='flex items-center flex-wrap p-3 '>
+        <nav className='flex items-center flex-wrap p-3 border-bottom-navbar'>
           <Link href='/'>
             <a className='header-logo-hw -inline-flex items-center p-2 mr-4 '>
               <Logo />

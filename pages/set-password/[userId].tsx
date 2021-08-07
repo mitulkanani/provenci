@@ -7,13 +7,7 @@ import { useEffect } from 'react';
 
 export default function LoginIndexPage() {
 
-  useEffect(()=>{
-    console.log("called")
-  },[])
-
-    return (
-        // <Layout title="Proven Cli">
-            <ResetPassword />
-        // </Layout>
-    )
+  return (
+    <ResetPassword />
+  )
 }

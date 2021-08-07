@@ -17,10 +17,13 @@
     "next-auth": "^3.27.1",
     "postcss": "^7.0.36",
     "react": "^17.0.2",
+    "react-datepicker": "^4.1.1",
     "react-dom": "^17.0.2",
+    "react-select": "^4.3.1",
     "react-toastify": "^7.0.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4",
-    "ts-node": "^10.0.0"
+    "ts-node": "^10.0.0",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.3",

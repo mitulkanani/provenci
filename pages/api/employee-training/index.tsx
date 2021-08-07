@@ -7,28 +7,21 @@ const prisma:any = new PrismaClient();
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method == 'POST') {
     try {
-      const getCorrectUserDataByEmail = await prisma.user.findUnique({ 
-        where:{
-          email: req.query.email[0]
-        }
-      });
-
       let dataObjResetForm:any = JSON.parse(req.body);
       // let dataObj:any = [...dataObjResetForm]
-      dataObjResetForm.user_id = getCorrectUserDataByEmail.id
-      delete dataObjResetForm.email
-      const updateUserProfile = await prisma.userProfile.upsert({
-        where: { user_id: getCorrectUserDataByEmail.id },
-        update: dataObjResetForm,
-        create: dataObjResetForm,
+      console.log(dataObjResetForm)
+      const addEmployeeTraining = await prisma.employeeTraining.createMany({
+        data: dataObjResetForm,
       })
-      if(updateUserProfile){
-        res.status(200).json({ message: 'Data updated successfully',data:updateUserProfile });
+      console.log(addEmployeeTraining)
+      if(addEmployeeTraining){
+        res.status(200).json({ message: 'Training Data added successfully',data:addEmployeeTraining });
       }else{
         res.status(400).json({ message: 'Something went wrong' });
       }
     } catch (error) {
-      res.status(400).json({ message: 'Something went wrong' });
+        console.log("error",error.code)
+      res.status(400).json({ message: error.message });
     }
   }else{
     try {

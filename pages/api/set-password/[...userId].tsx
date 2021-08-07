@@ -5,7 +5,6 @@ import { PrismaClient, Prisma } from '@prisma/client';
 const prisma:any = new PrismaClient();
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log("api fond",req.method,req.body)
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
@@ -17,7 +16,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         id: parseInt(dataObjResetForm.id)
       }
     });
-    console.log(getCorrectUserDataByIdPass)
     if(getCorrectUserDataByIdPass){
       const updateUser = await prisma.user.update({
         where: {
@@ -33,7 +31,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(400).json({ message: 'Data not found' });
     }
   } catch (err) {
-    console.log(err);
     res.status(400).json({ message: 'Something went wrong' });
   }
 };

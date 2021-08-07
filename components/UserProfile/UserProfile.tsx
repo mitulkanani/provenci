@@ -275,7 +275,6 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
  const UserProfileForm = withFormik<LoginFormProps, FormValues>({
    // Transform outer props into form values
    mapPropsToValues: props => {
-     console.log("props map state to props",props?.userProfileProps?.UserProfile[0])
      let userProfleData = props?.userProfileProps?.UserProfile[0]
      return {
       email: props.userProfileProps?.email || '',
@@ -348,13 +347,11 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
  
    handleSubmit: async values => {
     const {email} = values 
-    console.log("values",values)
     const response = await fetch(`/api/get-user-profile-data/${values.email}`, {
       method: 'POST',
       body: JSON.stringify(values)
     });
     const data:any = await response.json()
-    console.log("response",data)
     if(!response.ok){
       notiFy(data.message)
     }else{
@@ -365,7 +362,6 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
  })(InnerForm);
 
 const UserProfile = (props:UserProfileProps) => {
-  console.log("props",props)
     const router = useRouter()
 const [session, loading]:any = useSession()
 

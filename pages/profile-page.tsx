@@ -9,7 +9,9 @@ export default function ProfilePage () {
 	const [session, loading]:any = useSession()
 	const [userData,setUserData]:any = useState();
 	useEffect(() =>{
-		init()
+		if(session?.user?.data?.email){
+			init()
+		}
 	},[session])
 	
 	const init = async () => {

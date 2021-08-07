@@ -7,7 +7,6 @@ export default function Welcome () {
 	const router = useRouter()
 
 	useEffect(() => {
-		console.log("here comes ")
 		if(!loading && !session?.accessToken) {
 			router.push('/login')
 		}

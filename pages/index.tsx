@@ -19,10 +19,10 @@ export default function IndexPage() {
 	}, [loading, session])
   
   return (
-    <Layout session={session} title="Proven Cli">
+    // <Layout session={session} title="Proven Cli">
       <>
         
       </>
-    </Layout>
+    // </Layout>
   )
 }

@@ -60,6 +60,7 @@ const callbacks = {
 const options = {
   providers,
   callbacks,
+  site: 'https://dev.provenpci.com:3000',
   pages: {
     error: '/login' // Changing the error redirect page to our custom login page
   }

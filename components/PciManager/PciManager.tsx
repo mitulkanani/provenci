@@ -87,7 +87,7 @@ const  CustomersPay = (props) => {
   function onSubmit(fields) {
 
       // display form field values on success
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
+      // alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
       let currentStep = stepCustomersPay + 1
       setStepCustomersPay(currentStep)
   }

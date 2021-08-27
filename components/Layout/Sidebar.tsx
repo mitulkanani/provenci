@@ -40,22 +40,10 @@ const SideBar = ({SideBarClose}:Props) => {
                         {/* </Link> */}
                     </ActiveLink>
                     <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
-                        Password Manager
+                        Vault
                     </a>
                     <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
-                        Scan
-                    </a>
-                    <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
-                        Antivirus
-                    </a>
-                    <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
-                        Patching
-                    </a>
-                    <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
-                        Security & Training
-                    </a>
-                    <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
-                        Policy & Procedures
+                        Scheduler
                     </a>
                     <ActiveLink activeClassName="active" href="/training">
                         
@@ -71,6 +59,23 @@ const SideBar = ({SideBarClose}:Props) => {
                             PCI Manager
                         </a>
                     </ActiveLink>
+                    {/* <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
+                        Antivirus
+                    </a>
+                    <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
+                        Patching
+                    </a>
+                    <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
+                        Security & Training
+                    </a> */}
+                    <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
+                        Policy & Procedures
+                    </a>
+                    <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">
+                        Reports
+                    </a>
+                    
+                    
                 </div>
                 <div>
                 <a href="" className="block text-center py-2.5 px-4 rounded transition duration-200 sidebar-link-hover hover:text-purple-900">

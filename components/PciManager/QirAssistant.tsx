@@ -20,7 +20,7 @@ interface PaymentValue {
 
 const  QirAssistant = (props) => {
   const{setStepCustomersPay,stepCustomersPay} = props;
-  const initialValues = {
+  const initialValues:any = {
     paymentApplication: [
       {
         application_name:'',
@@ -34,8 +34,8 @@ const  QirAssistant = (props) => {
           Yup.object().shape({
               application_name: Yup.string()
                   .required('Application name is required'),
-              descrioption: Yup.string()
-                  .required('Version name is required'),
+              description: Yup.string()
+                  .required('description is required'),
           })
       )
   });
@@ -53,7 +53,7 @@ const  QirAssistant = (props) => {
   function onSubmit(fields) {
 
       // display form field values on success
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
+      // alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
       let currentStep = stepCustomersPay + 1
       setStepCustomersPay(currentStep)
   }
@@ -83,12 +83,10 @@ const  QirAssistant = (props) => {
                         <FieldArray name="paymentApplication">
                         {() => (values.paymentApplication.map((application, i) => {
                             const ticketErrors = errors.paymentApplication?.length && errors.paymentApplication[i] || {};
-                            const ticketTouched = touched.paymentApplication?.length && touched.paymentApplication[i] || {};
-                            console.log("hhb",ticketErrors,ticketTouched)
                             return (
 													<div key={i} className="container flex flex-row">
 															<div className="w-2/4 mb-4 mt-5 mr-10">
-																	<Field name={`application.${i}.application_name`}>
+																	{/* <Field name={`application.${i}.application_name`}>
 																		{({ field }) => (
 																				<div className='form-group'>
 																					<label className="text-gray-600 block mb-2">Name of Service Provider</label>
@@ -97,11 +95,14 @@ const  QirAssistant = (props) => {
 																					<ErrorMessage name={`application.${i}.application_name`} component="div" className="invalid-feedback" />
 																				</div>
 																		)}
-																	</Field>
+																	</Field> */}
+                                  <label className="font-bold text-gray-600 block mb-2">Name of Service Provider</label>
+                                  <Field name={`paymentApplication.${i}.application_name`} type="text" className={'block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow form-control' + (ticketErrors.application_name  ? ' is-invalid' : '' )} />
+                                  <ErrorMessage name={`paymentApplication.${i}.application_name`} component="div" className="invalid-feedback text-red-500" />
 															</div>
 
 																<div className="w-2/4 mb-4 mt-5 ml-10">
-																	<Field name={`application.${i}.description`}>
+																	{/* <Field name={`application.${i}.description`}>
 																		{({ field }) => (
 																				<>
 																					<label className="text-gray-600 block mb-2">Description of Service Provider</label>
@@ -110,7 +111,10 @@ const  QirAssistant = (props) => {
 																					<ErrorMessage name={`application.${i}.description`} component="div" className="invalid-feedback" />
 																				</>
 																		)}
-																	</Field>
+																	</Field> */}
+                                  <label className="font-bold text-gray-600 block mb-2">Description of Service Provider</label>
+                                  <Field name={`paymentApplication.${i}.description`} type="text" className={'block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow form-control' + (ticketErrors.description ? ' is-invalid' : '' )} />
+                                  <ErrorMessage name={`paymentApplication.${i}.description`} component="div" className="invalid-feedback text-red-500" />
 																</div>
                               </div>
                             );

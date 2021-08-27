@@ -12,7 +12,9 @@ type Props = {
 
 // Shape of form values
 interface FormValues {
-  payment_type: Array;
+  payment_type: string;
+  payment_type_i_frame:string;
+  userProfileProps:any
 }
 
 interface OtherProps {
@@ -80,14 +82,14 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
   // The type of props LoginForm receives
  interface LoginFormProps {
     email?: string;
-    pciManageForm: any;
-    setStepCustomersPay: Function,
-    stepCustomersPay: Number,
+    pciManageForm?: any;
+    setStepCustomersPay?: Function,
+    stepCustomersPay?: Number,
+    userProfileProps?:any,
     message: string; // if this passed all the way through you might do this or make a union type
   }
 
   interface UserProfileProps {
-    userDataObj: object,
     setStepCustomersPay: Function,
     stepCustomersPay: Number,
   }
@@ -110,8 +112,6 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
    },
  
    handleSubmit: async values => {
-    const {email} = values 
-    console.log("values",values)
     let currentStep = values.userProfileProps.stepCustomersPay
     let nextStepFun = values.userProfileProps.setStepCustomersPay
     nextStepFun(currentStep + 1)
